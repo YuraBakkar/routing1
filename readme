@@ -1,3 +1,13 @@
 prerequisites:
 sudo apt install jq
 sudo sysctl net.ipv4.ip_forward=1
+
+get your network interface name:
+ifconfig
+
+run script:
+sudo ./process.sh
+
+flush iptables rules:
+sudo iptables -t nat -v -F PREROUTING
+sudo iptables -t nat -v -F INPUT
